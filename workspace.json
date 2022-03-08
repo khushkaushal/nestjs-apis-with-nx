@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "api": "apps/api",
+    "avengers": "apps/avengers",
     "core": "libs/core"
   }
 }
