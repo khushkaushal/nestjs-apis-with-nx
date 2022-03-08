@@ -1,6 +1,5 @@
 import { InjectRedis } from '@nestjs-modules/ioredis';
-import { CACHE_MANAGER, Inject, Injectable } from '@nestjs/common';
-import { Cache } from 'cache-manager';
+import { Injectable } from '@nestjs/common';
 import { Redis } from 'ioRedis';
 
 @Injectable()
@@ -9,6 +8,7 @@ export class RedisCacheService {
     @InjectRedis() private readonly redis: Redis,
   ) {}
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     async get(key): Promise<any> {
         return await this.redis.get(key);
     }
