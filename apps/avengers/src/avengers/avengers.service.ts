@@ -22,7 +22,7 @@ export class AvengersService {
 
   async findAll() {
     const values = await this.cacheManager.getAllValues();
-    return (values);
+    return values.map((x) => JSON.parse(x))
   }
 
   async findOne(id: string) {
